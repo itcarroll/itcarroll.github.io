@@ -29,8 +29,8 @@ collaborative workflows across disciplinary boundaries.
 | **Ph. D. in Ecology, Evolution, and Marine Biology** | 2006 -- 2012 |
 | *University of California at Santa Barbara (UCSB)*   |              |
 
-Prof. Roger Nisbet advised dissertation on biodiversity maintenance in
-stochastic models. Research grants awarded by UC Reserve System, UCSB
+Prof. Roger Nisbet advised dissertation on stochastic modeling of biodiversity maintenance. 
+Research grants awarded by UC Reserve System, UCSB
 Graduate Division, and American Phycological Society. Project
 required computations performed on a 110 MPI node cluster in the
 Center for Scientific Computing at UCSB. Twice co-lectured the
