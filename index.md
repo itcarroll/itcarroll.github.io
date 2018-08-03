@@ -85,7 +85,7 @@ feet over 25 miles from nearest road access.
 
 - Avolio, M. L., **I. T. Carroll**, S. Collins, G. Houseman,
   F. Isbell, S. Koerner, K. La Pierre, M. Smith, K. Wilcox, and
-  L. Hallett. Submitted. A comprehensive approach to analyzing
+  L. Hallett. Submitted June 2018. A comprehensive approach to analyzing
   community dynamics using rank abundance curves.
 
 - **Carroll, I. T.** and R. M. Nisbet. 2015. Departures from
