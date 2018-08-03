@@ -56,12 +56,7 @@ Develop curricula for intensive short courses training researchers on reproducib
 | **Postdoctoral Fellow in Biology** | 2014 -- 2016 |
 | *Georgetown University*            |              |
 
-Basic research on foreign animal disease preparedness through
-livestock tracing and network modeling. Developed geodatabase of
-cattle marketing records programmatically scraped from heterogeneous
-online sources. Bayesian predictive modeling of trade network for
-epidemic inference. Managed and taught Python to 5 undergraduate and
-masters student research assistants.
+Basic research on animal disease preparedness through livestock tracing and network modeling. Developed geodatabase of cattle marketing records programmatically scraped from heterogeneous online sources. Developed Bayesian predictive models of trade networks for epidemic inference. Managed and taught Python to five undergraduate and masters student research assistants.
 
 | **Postdoctoral Scholar in Biology**    | 2012 -- 2014 |
 | *Woods Hole Oceanographic Institution* |              |
