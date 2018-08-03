@@ -62,12 +62,7 @@ Basic research on animal disease preparedness through livestock tracing and netw
 | *Woods Hole Oceanographic Institution* |              |
 
 Competitive 18-month scholarship awarded for research on phytoplankton
-population dynamics. Developed novel probabilistic treatment of a
-machine learning algorithm’s output, used to identify species of
-marine phytoplankton from *in-situ* microscopic imagery. Submitted NSF
-proposal to couple automatically classified cell images to near-shore
-phytoplankton community model, using particle filtering to accommodate
-classification errors. Utilized GPU for highly parallel computations.
+population dynamics. Used a machine learning classifier applied to marine phytoplankton from *in-situ* microscopic imagery, developed novel probabilistic treatment to identify species. Utilized GPU for highly parallel computations. Submitted NSF proposal to couple automatically classified cell images to phytoplankton community model and accommodate classification errors using particle filtering.
 
 | **Research Assistant**                              | 2005 -- 2006 |
 | *Heinz Center for Science, Economics & Environment* |              |
