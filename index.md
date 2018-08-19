@@ -20,7 +20,7 @@ collaborative workflows across disciplinary boundaries.
 | Programming                                | Math & Stats                                            |
 |--------------------------------------------+---------------------------------------------------------|
 | Python, R, C, SQL, CUDA, git, Mathematica, | ordinary, partial, and stochastic DEs; hierarchical     |
-| MATLAB, SQL, Bash, Jekyll, CSS, LaTeX,     | Bayes; generalized linear mixed models; random forests; |
+| MATLAB, Bash, Jekyll, CSS, LaTeX, Docker   | Bayes; generalized linear mixed models; random forests; |
 | JavaScript, RegExp, Google Earth Engine    | MCMC; Kalman and particle filtering; time series models |
 {:#toolboxes}
 
@@ -29,7 +29,7 @@ collaborative workflows across disciplinary boundaries.
 | **Ph. D. in Ecology, Evolution, and Marine Biology** | 2006 -- 2012 |
 | *University of California at Santa Barbara (UCSB)*   |              |
 
-Prof. Roger Nisbet advised dissertation on stochastic modeling of biodiversity maintenance. 
+Dissertation on stochastic modeling of biodiversity maintenance advised by Prof. Roger Nisbet. 
 Research grants awarded by UC Reserve System, UCSB
 Graduate Division, and American Phycological Society. Project
 required computations performed on a 110 MPI node cluster in the
@@ -51,7 +51,7 @@ Academic Excellence.
 | **Data Scientist**                                       | 2016 -- 2018  |
 | *National Socio-Environmental Synthesis Center (SESYNC)* |               |
 
-Develop curricula for intensive short courses training researchers on reproducible data management (spatial, temporal and tabular), data synthesis, analysis and visualization. Courses taught primarily at SESYNC but also at local universities and one international scientific conference. Consult with inter-disciplinary teams of scientists and postdocs funded by SESYNC on above mentioned topics, as well as experimental design and modeling for socio-environmental systems.
+Developed curricula for intensive short courses training researchers on reproducible data managment (spatial, temporal and tabular), data synthesis, analysis and visualization. Courses taught primarily at SESYNC but also at local universities and one international scientific conference. Consult with inter-disciplinary teams of scientists and postdocs funded by SESYNC on above mentioned topics, as well as experimental design and modeling for socio-environmental systems.
 
 | **Postdoctoral Fellow in Biology** | 2014 -- 2016 |
 | *Georgetown University*            |              |
@@ -62,7 +62,7 @@ Basic research on animal disease preparedness through livestock tracing and netw
 | *Woods Hole Oceanographic Institution* |              |
 
 Competitive 18-month scholarship awarded for research on phytoplankton
-population dynamics. Used a machine learning classifier applied to marine phytoplankton from *in-situ* microscopic imagery, developed novel probabilistic treatment to identify species. Utilized GPU for highly parallel computations. Submitted NSF proposal to couple automatically classified cell images to phytoplankton community model and accommodate classification errors using particle filtering.
+population dynamics. Used machine learning to classify marine phytoplankton from *in-situ* microscopic imagery, using a novel probabilistic interpretation of random forests. Utilized GPU for parallel computations. Submitted NSF proposal to couple automatically classified cell images to phytoplankton community model and accommodate classification errors using particle filtering.
 
 | **Research Assistant**                              | 2005 -- 2006 |
 | *Heinz Center for Science, Economics & Environment* |              |
