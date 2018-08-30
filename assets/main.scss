@@ -86,7 +86,7 @@ table#toolboxes {
 
 #peer-reviewed-publications {
     @media print {
-        page-break-before: always;
+       // page-break-before: always;
     }
 }
 
@@ -99,7 +99,7 @@ body {
 .wrapper {
     @media print {
         max-width: unset;
-        margin: 0 1in;
+        margin: 0 0.5in;
         padding: 0;
     }
 }
