@@ -66,16 +66,14 @@ population dynamics. Used machine learning to classify marine phytoplankton from
 | **Research Assistant**                              | 2005 -- 2006 |
 | *Heinz Center for Science, Economics & Environment* |              |
 
-Contributed visualizations of data on the distribution and abundance
-of non-native species in the US for the “State of the Nation’s
+Data visualizations for sections on non-native species within the “State of the Nation’s
 Ecosystems” report. Authored internal report on data gaps for
 air-quality indicators.
 
 | **Biological Field Technician (0404)** | 2004 -- 2005 |
 | *US Forest Service*                    |              |
 
-Field work in remote regions of the Sierra Nevada, performing
-mark-recapture surveys of threatened amphibian species. Data entry in
+Field work in remote regions of the Sierra Nevada, surveying threatened amphibian species. Data entry in
 MS Access database and population status maps produced with
 ArcGIS. Required to carry 50lbs of equipment at altitudes of 10-12K
 feet over 25 miles from nearest road access.
