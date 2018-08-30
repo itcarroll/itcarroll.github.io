@@ -29,13 +29,12 @@ collaborative workflows across disciplinary boundaries.
 | **Ph. D. in Ecology, Evolution, and Marine Biology** | 2006 -- 2012 |
 | *University of California at Santa Barbara (UCSB)*   |              |
 
-Dissertation on stochastic modeling of biodiversity maintenance advised by Prof. Roger Nisbet. 
-Research grants awarded by UC Reserve System, UCSB
-Graduate Division, and American Phycological Society. Project
-required computations performed on a 110 MPI node cluster in the
-Center for Scientific Computing at UCSB. Twice co-lectured the
-“Introduction to Ecology” course. *Honors*: NSF Graduate Research
-Fellowship, Regents Special Fellow, Worster Award for Student Mentors.
+Dissertation on stochastic models of biodiversity maintenance advised by
+Prof. Roger Nisbet. Research funding from UC Reserve System, UCSB Graduate
+Division, and American Phycological Society. Built models to run on a 110
+MPI node cluster in the Center for Scientific Computing at UCSB. Twice
+co-lectured the “Introduction to Ecology” course. *Honors*: NSF Graduate
+Research Fellowship, Regents Special Fellow, Worster Award for Student Mentors.
 
 | **B.A. with Honors in Biology** | 1999 -- 2003 |
 | *Brown University*              |              |
@@ -51,18 +50,18 @@ Academic Excellence.
 | **Data Scientist**                                       | 2016 -- 2018  |
 | *National Socio-Environmental Synthesis Center (SESYNC)* |               |
 
-Developed curricula for intensive short courses training researchers on reproducible data managment (spatial, temporal and tabular), data synthesis, analysis and visualization. Courses taught primarily at SESYNC but also at local universities and one international scientific conference. Consult with inter-disciplinary teams of scientists and postdocs funded by SESYNC on above mentioned topics, as well as experimental design and modeling for socio-environmental systems.
+Developed curricula for intensive short courses training researchers on reproducible data managment (spatial, temporal and tabular), data synthesis, analysis and visualization. Courses taught primarily at SESYNC but also at local universities and one international scientific conference. Consulting for inter-disciplinary teams of scientists and postdocs funded by SESYNC on above mentioned topics, as well as experimental design and modeling for socio-environmental systems.
 
 | **Postdoctoral Fellow in Biology** | 2014 -- 2016 |
 | *Georgetown University*            |              |
 
-Basic research on animal disease preparedness through livestock tracing and network modeling. Developed geodatabase of cattle marketing records programmatically scraped from heterogeneous online sources. Developed Bayesian predictive models of trade networks for epidemic inference. Managed and taught Python to five undergraduate and masters student research assistants.
+Basic research on animal disease propegation through livestock tracing and network modeling. Developed geodatabase of cattle marketing records programmatically scraped from heterogeneous online sources. Developed Bayesian predictive models of trade networks for epidemic inference. Managed and taught Python to five undergraduate and masters student research assistants.
 
 | **Postdoctoral Scholar in Biology**    | 2012 -- 2014 |
 | *Woods Hole Oceanographic Institution* |              |
 
 Competitive 18-month scholarship awarded for research on phytoplankton
-population dynamics. Used machine learning to classify marine phytoplankton from *in-situ* microscopic imagery, using a novel probabilistic interpretation of random forests. Utilized GPU for parallel computations. Submitted NSF proposal to couple automatically classified cell images to phytoplankton community model and accommodate classification errors using particle filtering.
+population dynamics. Used machine learning to classify marine phytoplankton from *in-situ* microscopic imagery, with a novel probabilistic interpretation of random forests. Utilized GPU for parallel computations. Submitted NSF proposal to couple automatically classified cell images to phytoplankton community model and accommodate classification errors using particle filtering.
 
 | **Research Assistant**                              | 2005 -- 2006 |
 | *Heinz Center for Science, Economics & Environment* |              |
