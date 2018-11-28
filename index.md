@@ -2,7 +2,7 @@
 layout: default
 ---
 
-# Ian 🌱 Carroll
+# Ian :seedling: Carroll
 
 - [<i class="fab fa-github"></i>]{:data-text="itcarroll"}
 - [<i class="fas fa-map-marker-alt"></i>]{:data-text="Washington, DC"}
@@ -55,7 +55,7 @@ Developed curricula for intensive short courses training researchers on reproduc
 | **Postdoctoral Fellow in Biology** | 2014 -- 2016 |
 | *Georgetown University*            |              |
 
-Basic research on animal disease propegation through livestock tracing and network modeling. Developed geodatabase of cattle marketing records programmatically scraped from heterogeneous online sources. Developed Bayesian predictive models of trade networks for epidemic inference. Managed and taught Python to five undergraduate and masters student research assistants.
+Basic research on animal disease propagation through livestock tracing and network modeling. Developed geodatabase of cattle marketing records programmatically scraped from heterogeneous online sources. Developed Bayesian predictive models of trade networks for epidemic inference. Managed and taught Python to five undergraduate and masters student research assistants.
 
 | **Postdoctoral Scholar in Biology**    | 2012 -- 2014 |
 | *Woods Hole Oceanographic Institution* |              |
