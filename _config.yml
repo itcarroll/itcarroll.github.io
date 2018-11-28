@@ -1,12 +1,8 @@
-# Site
-title: Ian Carroll
-description: >-
-  Résumé/CV for Ian Carroll
-  Ecologist, Data Scientist, and Modeler
-
 # Build settings
 markdown: kramdown
 theme: minima
+plugins:
+  - jemoji
 exclude:
   - Gemfile
   - Gemfile.lock

@@ -59,6 +59,7 @@ Basic research on animal disease propagation through livestock tracing and netwo
 
 | **Postdoctoral Scholar in Biology**    | 2012 -- 2014 |
 | *Woods Hole Oceanographic Institution* |              |
+{:.page-break}
 
 Competitive 18-month scholarship awarded for research on phytoplankton
 population dynamics. Used machine learning to classify marine phytoplankton from *in-situ* microscopic imagery, with a novel probabilistic interpretation of random forests. Utilized GPU for parallel computations. Submitted NSF proposal to couple automatically classified cell images to phytoplankton community model and accommodate classification errors using particle filtering.
@@ -122,6 +123,7 @@ feet over 25 miles from nearest road access.
 
 
 ## _Additional Products_
+{:.page-break}
 
 - Marchand, P., M. Smorul, and **I. T. Carroll**. 2017. rslurm: Submit
   R Calculations to a Slurm Cluster. CRAN
@@ -172,10 +174,14 @@ feet over 25 miles from nearest road access.
   two-species bacterial communities. Gordon Research Conference in
   Microbial Population Biology. Andover, NH.
 
-Updated on 2018-08-02
+Updated on 2018-11-27
 {:#timestamp}
 
 [<i class="fab fa-github"></i>]: https://github.com/itcarroll
 [<i class="fas fa-map-marker-alt"></i>]: https://www.google.com/maps/place/Washington,+DC
 [<i class="fas fa-phone"></i>]: tel:+18052917933
 [<i class="fas fa-envelope"></i>]: mailto:carroll.ian@gmail.com
+
+<script>
+window.onbeforeprint = function() {document.title = 'Ian-Carroll-CV';}
+</script>

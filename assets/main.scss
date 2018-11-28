@@ -84,20 +84,16 @@ table#toolboxes {
     font-size: small;
 }
 
-#peer-reviewed-publications {
-    @media print {
-       // page-break-before: always;
+@media print {
+    .page-break {
+       page-break-before: always;
     }
-}
-
-body {
-    @media print {
+    
+    body {
         font-size: 11pt;
     }
-}
 
-.wrapper {
-    @media print {
+    .wrapper {
         max-width: unset;
         margin: 0 0.5in;
         padding: 0;
