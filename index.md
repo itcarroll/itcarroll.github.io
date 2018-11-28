@@ -50,7 +50,7 @@ Academic Excellence.
 | **Data Scientist**                                       | 2016 -- 2018  |
 | *National Socio-Environmental Synthesis Center (SESYNC)* |               |
 
-Developed curricula for intensive short courses training researchers on reproducible data managment (spatial, temporal and tabular), data synthesis, analysis and visualization. Courses taught primarily at SESYNC but also at local universities and one international scientific conference. Consulting for inter-disciplinary teams of scientists and postdocs funded by SESYNC on above mentioned topics, as well as experimental design and modeling for socio-environmental systems.
+Developed curricula for and lead intensive short courses to train researchers on reproducible managment, synthesis, analysis, and visualization of unstructured, tabular, and geospatial data. Courses taught primarily at SESYNC but also at local universities and one international scientific conference. Consulting for inter-disciplinary teams of scientists and postdocs funded by SESYNC on above mentioned topics, as well as experimental design and process models for socio-environmental systems.
 
 | **Postdoctoral Fellow in Biology** | 2014 -- 2016 |
 | *Georgetown University*            |              |
