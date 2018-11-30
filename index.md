@@ -125,8 +125,12 @@ feet over 25 miles from nearest road access.
 ## _Additional Products_
 {:.page-break}
 
+- Hallett, L., M. Avolio, **I. T. Carroll**, S. K. Jones, A. A. MacDonald,
+  D. F. B. Flynn, P. Slaughter, J. Ripplinger, S. L. Collins, C. Gries,
+  M. B. Jones. 2018. codyn: Community Dynamics Metrics. CRAN.
+
 - Marchand, P., M. Smorul, and **I. T. Carroll**. 2017. rslurm: Submit
-  R Calculations to a Slurm Cluster. CRAN
+  R Calculations to a Slurm Cluster. CRAN.
 
 - **Carroll, I. T.**, and S. Bansal. 2014. Cattle auction markets in
   the USA: a de-duplicated list compiled from trade association and
