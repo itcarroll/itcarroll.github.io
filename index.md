@@ -54,12 +54,12 @@ Developed curricula for and lead intensive short courses to train researchers on
 
 | **Postdoctoral Fellow in Biology** | 2014 -- 2016 |
 | *Georgetown University*            |              |
+{:.page-break}
 
 Basic research on animal disease propagation through livestock tracing and network modeling. Developed geodatabase of cattle marketing records programmatically scraped from heterogeneous online sources. Developed Bayesian predictive models of trade networks for epidemic inference. Managed and taught Python to five undergraduate and masters student research assistants.
 
 | **Postdoctoral Scholar in Biology**    | 2012 -- 2014 |
 | *Woods Hole Oceanographic Institution* |              |
-{:.page-break}
 
 Competitive 18-month scholarship awarded for research on phytoplankton
 population dynamics. Used machine learning to classify marine phytoplankton from *in-situ* microscopic imagery, with a novel probabilistic interpretation of random forests. Utilized GPU for parallel computations. Submitted NSF proposal to couple automatically classified cell images to phytoplankton community model and accommodate classification errors using particle filtering.
