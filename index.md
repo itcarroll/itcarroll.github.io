@@ -123,7 +123,6 @@ feet over 25 miles from nearest road access.
 
 
 ## _Additional Products_
-{:.page-break}
 
 - Hallett, L., M. Avolio, **I. T. Carroll**, S. K. Jones, A. A. MacDonald,
   D. F. B. Flynn, P. Slaughter, J. Ripplinger, S. L. Collins, C. Gries,
