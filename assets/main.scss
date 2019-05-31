@@ -98,4 +98,7 @@ table#toolboxes {
         margin: 0 0.5in;
         padding: 0;
     }
+    a::after {
+        content: attr(data-text);
+    }
 }
