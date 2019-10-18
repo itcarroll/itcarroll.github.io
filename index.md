@@ -46,9 +46,14 @@ Academic Excellence.
 
 ## _Work Experience_
 
-| **Senior Data Scientist**                                | 2018 -- *now* |
-| **Data Scientist**                                       | 2016 -- 2018  |
-| *National Socio-Environmental Synthesis Center (SESYNC)* |               |
+| **Data Scientist** | 2019 -- *now* |
+| *Kimetrica*        |               |
+
+New member of the Data Lab and World Modeler, developing light-weight machine learning models for a social enterprise.
+
+| **Senior Data Scientist**                                | 2018 -- 2019 |
+| **Data Scientist**                                       | 2016 -- 2018 |
+| *National Socio-Environmental Synthesis Center (SESYNC)* |              |
 
 Developed curricula for and lead intensive short courses to train researchers on reproducible managment, synthesis, analysis, and visualization of unstructured, tabular, and geospatial data. Courses taught primarily at SESYNC but also at local universities and one international scientific conference. Consulting for inter-disciplinary teams of scientists and postdocs funded by SESYNC on above mentioned topics, as well as experimental design and process models for socio-environmental systems.
 
@@ -83,8 +88,8 @@ feet over 25 miles from nearest road access.
 
 - Avolio, M. L., **I. T. Carroll**, S. Collins, G. Houseman,
   F. Isbell, S. Koerner, K. La Pierre, M. Smith, K. Wilcox, and
-  L. Hallett. Submitted June 2018. A comprehensive approach to analyzing
-  community dynamics using rank abundance curves.
+  L. Hallett. 2019. A comprehensive approach to analyzing
+  community dynamics using rank abundance curves. Ecosphere 10(10):02881.
 
 - **Carroll, I. T.** and R. M. Nisbet. 2015. Departures from
   neutrality induced by niche and relative fitness
@@ -177,7 +182,7 @@ feet over 25 miles from nearest road access.
   two-species bacterial communities. Gordon Research Conference in
   Microbial Population Biology. Andover, NH.
 
-Updated on 2018-11-27
+Updated on 2019-10-17
 {:#timestamp}
 
 [<i class="fab fa-github"></i>]: https://github.com/itcarroll
