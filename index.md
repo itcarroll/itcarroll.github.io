@@ -26,8 +26,8 @@ collaborative workflows across disciplinary boundaries.
 
 ## _Education_
 
-| **Ph. D. in Ecology, Evolution, and Marine Biology** | 2006 -- 2012 |
-| *University of California at Santa Barbara (UCSB)*   |              |
+| **Ph. D. in Ecology, Evolution, and Marine Biology** | 2006-09/2012-05 |
+| *University of California at Santa Barbara (UCSB)*   |                 |
 
 Dissertation on stochastic models of biodiversity maintenance advised by
 Prof. Roger Nisbet. Research funding from UC Reserve System, UCSB Graduate
@@ -36,8 +36,8 @@ MPI node cluster in the Center for Scientific Computing at UCSB. Twice
 co-lectured the “Introduction to Ecology” course. *Honors*: NSF Graduate
 Research Fellowship, Regents Special Fellow, Worster Award for Student Mentors.
 
-| **B.A. with Honors in Biology** | 1999 -- 2003 |
-| *Brown University*              |              |
+| **B.A. with Honors in Biology** | 1999-09/2003-05 |
+| *Brown University*              |                 |
 
 Prof. Jennifer Hughes-Martiny advised on honors project with *E. coli*
 microcosom experiments and modeling. *Honors*: Caleel Prize for
@@ -46,38 +46,38 @@ Academic Excellence.
 
 ## _Work Experience_
 
-| **Data Scientist** | 2019 -- *now* |
-| *Kimetrica*        |               |
+| **Data Scientist** | 2019-08/2020-05 |
+| *Kimetrica*        |                 |
 
 New member of the Data Lab and World Modeler, developing light-weight machine learning models for a social enterprise.
 
-| **Senior Data Scientist**                                | 2018 -- 2019 |
-| **Data Scientist**                                       | 2016 -- 2018 |
-| *National Socio-Environmental Synthesis Center (SESYNC)* |              |
+| **Senior Data Scientist**                                | 2018-05/2019-08 |
+| **Data Scientist**                                       | 2016-04/2018-05 |
+| *National Socio-Environmental Synthesis Center (SESYNC)* |                 |
 
 Developed curricula for and lead intensive short courses to train researchers on reproducible managment, synthesis, analysis, and visualization of unstructured, tabular, and geospatial data. Courses taught primarily at SESYNC but also at local universities and one international scientific conference. Consulting for inter-disciplinary teams of scientists and postdocs funded by SESYNC on above mentioned topics, as well as experimental design and process models for socio-environmental systems.
 
-| **Postdoctoral Fellow in Biology** | 2014 -- 2016 |
-| *Georgetown University*            |              |
+| **Postdoctoral Fellow in Biology** | 2014-05/2016-04 |
+| *Georgetown University*            |                 |
 {:.page-break}
 
 Basic research on animal disease propagation through livestock tracing and network modeling. Developed geodatabase of cattle marketing records programmatically scraped from heterogeneous online sources. Developed Bayesian predictive models of trade networks for epidemic inference. Managed and taught Python to five undergraduate and masters student research assistants.
 
-| **Postdoctoral Scholar in Biology**    | 2012 -- 2014 |
-| *Woods Hole Oceanographic Institution* |              |
+| **Postdoctoral Scholar in Biology**    | 2012-11/2014-04 |
+| *Woods Hole Oceanographic Institution* |                 |
 
 Competitive 18-month scholarship awarded for research on phytoplankton
 population dynamics. Used machine learning to classify marine phytoplankton from *in-situ* microscopic imagery, with a novel probabilistic interpretation of random forests. Utilized GPU for parallel computations. Submitted NSF proposal to couple automatically classified cell images to phytoplankton community model and accommodate classification errors using particle filtering.
 
-| **Research Assistant**                              | 2005 -- 2006 |
-| *Heinz Center for Science, Economics & Environment* |              |
+| **Research Assistant**                              | 2005-03/2006-06 |
+| *Heinz Center for Science, Economics & Environment* |                 |
 
 Data visualizations for sections on non-native species within the “State of the Nation’s
 Ecosystems” report. Authored internal report on data gaps for
 air-quality indicators.
 
-| **Biological Field Technician (0404)** | 2004 -- 2005 |
-| *US Forest Service*                    |              |
+| **Biological Field Technician (0404)** | 2004-06/2004-12 |
+| *US Forest Service*                    |                 |
 
 Field work in remote regions of the Sierra Nevada, surveying threatened amphibian species. Data entry in
 MS Access database and population status maps produced with
@@ -182,7 +182,7 @@ feet over 25 miles from nearest road access.
   two-species bacterial communities. Gordon Research Conference in
   Microbial Population Biology. Andover, NH.
 
-Updated on 2019-10-17
+Updated on 2020-06-23
 {:#timestamp}
 
 [<i class="fab fa-github"></i>]: https://github.com/itcarroll
