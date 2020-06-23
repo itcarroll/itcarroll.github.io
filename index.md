@@ -49,7 +49,7 @@ Academic Excellence.
 | **Data Scientist** | 2019-08/2020-05 |
 | *Kimetrica*        |                 |
 
-New member of the Data Lab and World Modeler, developing light-weight machine learning models for a social enterprise.
+Member of the Data Lab and participant in the DARPA World Modelers program, tasked with developing light-weight machine learning models for situational assesment during crisis.
 
 | **Senior Data Scientist**                                | 2018-05/2019-08 |
 | **Data Scientist**                                       | 2016-04/2018-05 |
