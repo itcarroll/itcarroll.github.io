@@ -59,7 +59,6 @@ Developed curricula for and lead intensive short courses to train researchers on
 
 | **Postdoctoral Fellow in Biology** | 2014-05/2016-04 |
 | *Georgetown University*            |                 |
-{:.page-break}
 
 Basic research on animal disease propagation through livestock tracing and network modeling. Developed geodatabase of cattle marketing records programmatically scraped from heterogeneous online sources. Developed Bayesian predictive models of trade networks for epidemic inference. Managed and taught Python to five undergraduate and masters student research assistants.
 
