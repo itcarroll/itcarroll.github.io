@@ -1,0 +1,31 @@
+version: "3"
+
+x-build: &build
+  context: ./
+
+x-service: &service
+  environment:
+    - SHELL=/bin/bash
+  volumes:
+    - ${HOME}:/root
+  working_dir: /root
+  
+services:
+  jupyter:
+    <<: *service
+    image: jupyter
+    build:
+      <<: *build
+      dockerfile: ./jupyter/Dockerfile
+    ports:
+      - "8888:8888"
+    entrypoint:
+      - jupyter
+      - lab
+      - --LabApp.token=
+      - --ip=0.0.0.0
+      - --no-browser
+      - --allow-root
+#      - --NotebookApp.allow_origin='https://colab.research.google.com'
+
+# TODO tini init
