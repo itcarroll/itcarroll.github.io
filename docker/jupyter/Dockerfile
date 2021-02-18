@@ -44,7 +44,7 @@ RUN jupyter labextension disable @jupyterlab/extensionmanager-extension && \
 FROM osgeo/gdal:3.2.0
 
 COPY --from=osgeo /wheels /wheels
-# FIXME: kinda think i'm gonna need the next line, but cartopy does import without
+# FIXME: kinda think my lproj hack needs the next line, but cartopy does import without
 # COPY --from=osgeo /usr/lib/libproj* /usr/lib/
 
 ENV DEBIAN_FRONTEND noninteractive
@@ -64,18 +64,19 @@ RUN python -m pip install \
     jupyterlab-git
     
 RUN python -m pip install \
+    ipywidgets \
     bokeh \
     datashader \
     geopandas \
     geoviews \
     hvplot \
     panel \
-    xarray
+    statsmodels \
+    sympy \
+    xarray \
+    zarr
 
 RUN rm -rf /wheels
 
 COPY --from=jupyterlab /usr/local/share/jupyter/ /usr/local/share/jupyter/
 COPY --from=jupyterlab /usr/local/etc/jupyter/ /usr/local/etc/jupyter/
-
-# TODO
-#  - tini init
