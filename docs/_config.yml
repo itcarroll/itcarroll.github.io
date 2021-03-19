@@ -4,5 +4,9 @@ theme: minima
 plugins:
   - jemoji
 exclude:
-  - Gemfile
-  - Gemfile.lock
+  # Ruby
+  - Gemfile*
+  # Emacs
+  - ".#*"
+  - "#*"
+  - "*~"

@@ -1,5 +1,6 @@
 ---
 layout: default
+Time-stamp: 2021-03-18 # TODO emacs time-stamp.el not working
 ---
 
 # Ian :seedling: Carroll
@@ -11,16 +12,15 @@ layout: default
 {:.nav}
 
 Quantitative Ecologist trained in statistics and ecosystem modeling,
-now a dynamic consultant and instructor for computational methods and
+now a professional data scientist and instructor fostering
 collaborative workflows across disciplinary boundaries.
-
 
 ## _Toolbox_
 
 | Programming                                | Math & Stats                                            |
 |--------------------------------------------+---------------------------------------------------------|
 | Python, R, C, SQL, CUDA, git, Mathematica, | ordinary, partial, and stochastic DEs; hierarchical     |
-| MATLAB, Bash, Jekyll, CSS, LaTeX, Docker   | Bayes; generalized linear mixed models; random forests; |
+| MATLAB, Bash, Jekyll, CSS, LaTeX, Docker,  | Bayes; generalized linear mixed models; random forests; |
 | JavaScript, RegExp, Google Earth Engine    | MCMC; Kalman and particle filtering; time series models |
 {:#toolboxes}
 
@@ -29,57 +29,100 @@ collaborative workflows across disciplinary boundaries.
 | **Ph. D. in Ecology, Evolution, and Marine Biology** | 2006-09/2012-05 |
 | *University of California at Santa Barbara (UCSB)*   |                 |
 
-Dissertation on stochastic models of biodiversity maintenance advised by
-Prof. Roger Nisbet. Research funding from UC Reserve System, UCSB Graduate
-Division, and American Phycological Society. Built models to run on a 110
-MPI node cluster in the Center for Scientific Computing at UCSB. Twice
-co-lectured the “Introduction to Ecology” course. *Honors*: NSF Graduate
-Research Fellowship, Regents Special Fellow, Worster Award for Student Mentors.
+Dissertation developed analytical models of stochasticity's role in
+biodiversity maintenance, advised by Prof. Roger Nisbet. Models coded
+*de novo* to run on a 110 MPI node cluster in the Center for
+Scientific Computing at UCSB. Research funding received from UC
+Reserve System, UCSB Graduate Division, and American Phycological
+Society. Teaching experience included co-lecturer for "Introduction to
+Ecology" and several TA-ships. *Honors*: NSF Graduate Research
+Fellowship, Regents Special Fellow, Worster Award for Student Mentors.
 
 | **B.A. with Honors in Biology** | 1999-09/2003-05 |
 | *Brown University*              |                 |
 
-Prof. Jennifer Hughes-Martiny advised on honors project with *E. coli*
-microcosom experiments and modeling. *Honors*: Caleel Prize for
-Academic Excellence.
-
+Prof. Jennifer Hughes-Martiny advised an honors project with *E. coli*
+microcosom experiments and analytical models of resource
+competition. *Honors*: Caleel Prize for Academic Excellence.
 
 ## _Work Experience_
 
-| **Data Scientist** | 2019-08/2020-05 |
-| *Kimetrica*        |                 |
+| **Data Volunteer**      | 2020-09/2020-11 |
+| *Ohio Democratic Party* |              $0 |
 
-Member of the Data Lab and participant in the DARPA World Modelers program, tasked with developing light-weight machine learning models for situational assesment during crisis.
+Cleaned and augmented voter files through Votebuilder/NGP
+VAN. Reported phone/text canvassing activity metrics, derived from
+mobile app data accessed via Google BigQuery, for Get Out the Vote
+campaign strategists.
+
+| **Lead Data Scientist** | 2020-02/2020-05 |
+| **Data Scientist**      | 2019-08/2020-02 |
+| *Kimetrica*             |         $95,000 |
+
+Participating in the DARPA World Modelers program, lead the design and
+development of data-driven models for environmental and economic
+variables over East Africa. Collected and curated satellite imagery
+and other large-scale geospatial datasets for the region using both
+Amazon S3 and an in-house CKAN data portal. Distributed results with
+data visualizations and graphical model-assessments in Jupyter
+Notebooks. Integrated work with colleagues using version control and a
+self-hosted GitLab Server.
 
 | **Senior Data Scientist**                                | 2018-05/2019-08 |
 | **Data Scientist**                                       | 2016-04/2018-05 |
-| *National Socio-Environmental Synthesis Center (SESYNC)* |                 |
+| *National Socio-Environmental Synthesis Center (SESYNC)* |         $86,000 |
 
-Developed curricula for and lead intensive short courses to train researchers on reproducible managment, synthesis, analysis, and visualization of unstructured, tabular, and geospatial data. Courses taught primarily at SESYNC but also at local universities and one international scientific conference. Consulting for inter-disciplinary teams of scientists and postdocs funded by SESYNC on above mentioned topics, as well as experimental design and process models for socio-environmental systems.
+Developed curricula for and lead intensive short courses to train
+researchers on reproducible workflows for data synthesis, analysis,
+and visualization using scripted pipelines in R and Python. Courses
+taught primarily at SESYNC but also at local universities and one
+international scientific conference. Data scientist participant on
+inter-disciplinary research teams funded by SESYNC, primarily
+responsible for planning and designing approaches to synthesize
+datasets: including geospatial raster and vector datasets, high
+resolution time-series observations, experimental results, and
+free-form text/unstructured data. Coding performed primarily in R on
+the Center's self-hosted RStudio Server. Worked with IT to launch a
+parallel Jupyter Hub server to encourage Python based projects. As
+Senior Data Scientist, additionally supervised two data scientists and
+two graduate assistants.
 
 | **Postdoctoral Fellow in Biology** | 2014-05/2016-04 |
-| *Georgetown University*            |                 |
+| *Georgetown University*            |         $56,000 |
 
-Basic research on animal disease propagation through livestock tracing and network modeling. Developed geodatabase of cattle marketing records programmatically scraped from heterogeneous online sources. Developed Bayesian predictive models of trade networks for epidemic inference. Managed and taught Python to five undergraduate and masters student research assistants.
+Basic research on animal disease propagation through livestock tracing
+and network modeling. Designed and populated a PostgreSQL database of
+cattle market records (county-of-origin and price) scraped from
+websites using automated pipelines coded in Python. Developed Bayesian
+predictive models of cattle trade networks for epidemic inference. Managed
+and taught Python to five undergraduate and masters student research
+assistants.
 
 | **Postdoctoral Scholar in Biology**    | 2012-11/2014-04 |
-| *Woods Hole Oceanographic Institution* |                 |
+| *Woods Hole Oceanographic Institution* |         $57,000 |
 
 Competitive 18-month scholarship awarded for research on phytoplankton
-population dynamics. Used machine learning to classify marine phytoplankton from *in-situ* microscopic imagery, with a novel probabilistic interpretation of random forests. Utilized GPU for parallel computations. Submitted NSF proposal to couple automatically classified cell images to phytoplankton community model and accommodate classification errors using particle filtering.
+population dynamics. Used machine learning to classify marine
+phytoplankton from *in-situ* microscopic imagery, with a novel
+probabilistic interpretation of random forests. Utilized GPU for
+parallel computations. Submitted NSF proposal to couple automatically
+classified cell images to phytoplankton community model and
+accommodate classification errors using particle filtering.
 
 | **Research Assistant**                              | 2005-03/2006-06 |
-| *Heinz Center for Science, Economics & Environment* |                 |
+| *Heinz Center for Science, Economics & Environment* |         $30,000 |
 
-Data visualizations for sections on non-native species within the “State of the Nation’s
-Ecosystems” report. Authored internal report on data gaps for
+Designed and created data visualizations for sections of the "State of
+the Nation's Ecosystems" report on non-native and invasive
+species. Researched and authored internal report on data gaps for
 air-quality indicators.
 
 | **Biological Field Technician (0404)** | 2004-06/2004-12 |
 | *US Forest Service*                    |                 |
 
-Field work in remote regions of the Sierra Nevada, surveying threatened amphibian species. Data entry in
-MS Access database and population status maps produced with
+Carried out field work in remote regions of the Sierra Nevada,
+surveying threatened amphibian species and their habitat. Entered data
+in MS Access database and created population status maps in
 ArcGIS. Required to carry 50lbs of equipment at altitudes of 10-12K
 feet over 25 miles from nearest road access.
 
@@ -87,8 +130,8 @@ feet over 25 miles from nearest road access.
 
 - Avolio, M. L., **I. T. Carroll**, S. Collins, G. Houseman,
   F. Isbell, S. Koerner, K. La Pierre, M. Smith, K. Wilcox, and
-  L. Hallett. 2019. A comprehensive approach to analyzing
-  community dynamics using rank abundance curves. Ecosphere 10(10):02881.
+  L. Hallett. 2019. A comprehensive approach to analyzing community
+  dynamics using rank abundance curves. Ecosphere 10(10):02881.
 
 - **Carroll, I. T.** and R. M. Nisbet. 2015. Departures from
   neutrality induced by niche and relative fitness
@@ -124,7 +167,6 @@ feet over 25 miles from nearest road access.
 - Chikarmane H. M., A. M. Kuzirian, **I. T. Carroll**, and
   R. Dengler. 2001. Development of genetically tagged bay scallops for
   evaluation of seeding programs. Biological Bulletin 201(2):285-6.
-
 
 ## _Additional Products_
 
@@ -181,7 +223,7 @@ feet over 25 miles from nearest road access.
   two-species bacterial communities. Gordon Research Conference in
   Microbial Population Biology. Andover, NH.
 
-Updated on 2020-06-23
+Updated on {{page.Time-stamp}}
 {:#timestamp}
 
 [<i class="fab fa-github"></i>]: https://github.com/itcarroll
