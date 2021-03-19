@@ -5,9 +5,11 @@ x-service: &service
     - SHELL=/bin/bash
   volumes:
     - ${HOME}:/root
+    - ../:/src
   working_dir: /root
   ports:
     - 8888:8888
+    - 4000:4000
   
 services:
   conda:
@@ -22,13 +24,22 @@ services:
       - --ip=0.0.0.0
       - --no-browser
       - --allow-root
+  jekyll:
+    <<: *service
+    image: jekyll/jekyll:pages
+    working_dir: /src/docs
+    environment:
+      JEKYLL_GITHUB_TOKEN: ${JEKYLL_GITHUB_TOKEN}
+    entrypoint:
+      - jekyll
+      - serve
+      - --force_polling
+      - --livereload
   jupyter:
     <<: *service
     image: jupyter
     build:
       context: ./jupyter
-    ports:
-      - 8889:8888
     entrypoint:
       - jupyter
       - lab
