@@ -5,7 +5,7 @@ x-service: &service
     - SHELL=/bin/bash
   volumes:
     - ${HOME}:/root
-    - ../:/src
+    - ${PWD}:/src
   working_dir: /root
   ports:
     - 8888:8888
@@ -27,7 +27,7 @@ services:
   jekyll:
     <<: *service
     image: jekyll/jekyll:pages
-    working_dir: /src/docs
+    working_dir: /src
     environment:
       JEKYLL_GITHUB_TOKEN: ${JEKYLL_GITHUB_TOKEN}
     entrypoint:
