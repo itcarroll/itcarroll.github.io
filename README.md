@@ -11,13 +11,14 @@ The `docker` sub-directory contains configuration for dockerized
 multiple projects. The `docker-compose.yaml` file defines three
 [services].
 
-1. `conda` is a anaconda3 container that launches a Jupyter server on
-   startup.
 1. `gh-pages` builds static websites using the same software versions
    used by [GitHub Pages] builds
+1. `conda` is a anaconda3 container that launches a Jupyter server on
+   startup.
 1. `jupyter` launches a Jupyter server with a custom suite of packages,
    defined by the `Dockerfile` in the `jupyter` folder, for data science
    projects
+1. `rstudio` launches a WIP RStudio Server
 
 Each service runs with the `$HOME` directory mounted to `/root` and
 the `$PWD` mounted to `/src`. I recommend setting the `COMPOSE_FILE`
@@ -28,7 +29,7 @@ containing data you want accessible in `/src`.
 ## GitHub Page
 
 The `docs` sub-directory contains the files for the static website
-published at (https://itcarroll.github.io), my online CV/resume.
+published at https://itcarroll.github.io, my online CV/resume.
 
 ## Jupyter Notebooks
 

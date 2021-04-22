@@ -51,9 +51,9 @@ competition. *Honors*: Caleel Prize for Academic Excellence.
 | *Ohio Democratic Party* |              $0 |
 
 Cleaned and augmented voter files through Votebuilder/NGP
-VAN. Reported phone/text canvassing activity metrics, derived from
-mobile app data accessed via Google BigQuery, for Get Out the Vote
-campaign strategists.
+VAN. Reported phone/text canvassing activity metrics, calculated from
+mobile app data hosted on Google BigQuery, to support decision making
+by campaign strategists working to Get Out the Vote.
 
 | **Lead Data Scientist** | 2020-02/2020-05 |
 | **Data Scientist**      | 2019-08/2020-02 |

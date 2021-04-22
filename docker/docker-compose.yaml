@@ -9,20 +9,6 @@ x-service: &service
   working_dir: /root
   
 services:
-  conda:
-    <<: *service
-    image: continuumio/anaconda3:2020.11
-    volumes:
-      - ${HOME}/tmp:/root
-    ports:
-      - 8888:8888
-    entrypoint:
-      - jupyter
-      - lab
-      - --LabApp.token=
-      - --ip=0.0.0.0
-      - --no-browser
-      - --allow-root
   gh-pages:
     <<: *service
     image: gh-pages
@@ -37,13 +23,27 @@ services:
       - jekyll
       - serve
       - --host=0.0.0.0
+  conda:
+    <<: *service
+    image: continuumio/anaconda3:2020.11
+    volumes:
+      - ${HOME}/tmp:/root
+    ports:
+      - 8888:8888
+    entrypoint:
+      - jupyter
+      - lab
+      - --LabApp.token=
+      - --ip=0.0.0.0
+      - --no-browser
+      - --allow-root
   jupyter:
     <<: *service
     image: jupyter
     build:
       context: ./jupyter
     ports:
-      - 8888:8888
+      - 8889:8888
     entrypoint:
       - jupyter
       - lab
