@@ -57,10 +57,12 @@ services:
     image: rstudio
     build:
       context: ./rstudio
+      args:
+        RSTUDIO: ${USER}
     ports:
       - 8787:8787
     volumes:
-      - ${HOME}:/home/rstudio
+      - ${HOME}:/home/${USER}
     entrypoint:
       - /usr/lib/rstudio-server/bin/rserver
       - --server-daemonize=0
