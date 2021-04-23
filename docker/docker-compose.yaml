@@ -4,9 +4,9 @@ x-service: &service
   environment:
     - SHELL=/bin/bash
   volumes:
-    - ${HOME}:/root
+    - ${HOME}:/home/${USER}
     - ${PWD}:/src
-  working_dir: /root
+  working_dir: /home/${USER}
   
 services:
   gh-pages:
@@ -23,25 +23,13 @@ services:
       - jekyll
       - serve
       - --host=0.0.0.0
-  conda:
-    <<: *service
-    image: continuumio/anaconda3:2020.11
-    volumes:
-      - ${HOME}/tmp:/root
-    ports:
-      - 8888:8888
-    entrypoint:
-      - jupyter
-      - lab
-      - --LabApp.token=
-      - --ip=0.0.0.0
-      - --no-browser
-      - --allow-root
   jupyter:
     <<: *service
     image: jupyter
     build:
       context: ./jupyter
+      args:
+        JOVYAN: ${USER}
     ports:
       - 8889:8888
     entrypoint:
@@ -50,8 +38,22 @@ services:
       - --LabApp.token=
       - --ip=0.0.0.0
       - --no-browser
-      - --allow-root
       - --NotebookApp.allow_origin=https://colab.research.google.com
+  conda:
+    <<: *service
+    image: conda
+    build:
+      context: ./conda
+      args:
+        JOVYAN: ${USER}
+    ports:
+      - 8888:8888
+    entrypoint:
+      - jupyter
+      - lab
+      - --LabApp.token=
+      - --ip=0.0.0.0
+      - --no-browser
   rstudio:
     <<: *service
     image: rstudio
@@ -66,5 +68,3 @@ services:
     entrypoint:
       - /usr/lib/rstudio-server/bin/rserver
       - --server-daemonize=0
-
-## FIXME consistent user management for rstudio and jupyter

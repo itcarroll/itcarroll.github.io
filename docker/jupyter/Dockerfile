@@ -1,37 +1,37 @@
-FROM osgeo/gdal:3.2.0 AS osgeo
+FROM osgeo/gdal:ubuntu-full-3.2.1 AS build_0
 
-# FIXME: likely incorrect solution to ld not finding lproj at cartopy build
-COPY --from=osgeo/proj:6.3.2 /usr/lib/libproj* /usr/lib/
-COPY --from=osgeo/proj:6.3.2 /usr/include/ /usr/include/
-
-ENV DEBIAN_FRONTEND noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && \
     apt-get install -yq --no-install-recommends \
+    	python3-pip
+
+FROM build_0 AS build_1
+
+RUN apt-get install -yq --no-install-recommends \
         build-essential \
     	libgeos-dev \
-    	python3-pip \
     	python3-dev
+
+# FIXME: why necessary? why doesn't proj installation do this?
+RUN ln -s libproj.so.19 /usr/local/lib/libproj.so
 
 RUN python -m pip wheel --wheel-dir=/wheels \
     cartopy \
     psutil
 
+FROM build_0 AS build_2
 
-FROM osgeo/gdal:3.2.0 AS jupyterlab
+RUN python -m pip install \
+    jupyterlab==2.* \
+    jupyterlab-git
 
-ENV DEBIAN_FRONTEND noninteractive
+FROM build_2 AS build_3
 
 RUN curl -sL https://deb.nodesource.com/setup_lts.x | bash -
 
-RUN apt-get update && \
-    apt-get install -yq --no-install-recommends \
-        nodejs \
-    	python3-pip
-
-RUN python -m pip install \
-    jupyterlab \
-    jupyterlab-git
+RUN apt-get install -yq --no-install-recommends \
+        nodejs
 
 RUN jupyter labextension disable @jupyterlab/extensionmanager-extension && \
     jupyter labextension install \
@@ -40,43 +40,40 @@ RUN jupyter labextension disable @jupyterlab/extensionmanager-extension && \
     	@jupyterlab/geojson-extension \
     	@pyviz/jupyterlab_pyviz
 
+FROM build_2
 
-FROM osgeo/gdal:3.2.0
+COPY --from=build_3 /usr/local/share/jupyter/ /usr/local/share/jupyter/
 
-COPY --from=osgeo /wheels /wheels
-# FIXME: kinda think my lproj hack needs the next line, but cartopy does import without
-# COPY --from=osgeo /usr/lib/libproj* /usr/lib/
+COPY --from=build_3 /usr/local/etc/jupyter/ /usr/local/etc/jupyter/
 
-ENV DEBIAN_FRONTEND noninteractive
-
-RUN apt-get update && \
-    apt-get install -yq --no-install-recommends \
-        python3-pip \
+RUN apt-get install -yq --no-install-recommends \
         git && \
     rm -rf /var/lib/apt/lists/*
 
+COPY --from=build_1 /wheels /wheels
+
 RUN python -m pip install --no-index --find-links=/wheels \
-    cartopy \
-    psutil
+        cartopy \
+        psutil && \
+    rm -rf /wheels
 
 RUN python -m pip install \
-    jupyterlab \
-    jupyterlab-git
-    
-RUN python -m pip install \
-    ipywidgets \
-    bokeh \
-    datashader \
-    geopandas \
-    geoviews \
-    hvplot \
-    panel \
-    statsmodels \
-    sympy \
-    xarray \
-    zarr
+        ipywidgets \
+	bokeh \
+	datashader \
+	geopandas \
+	geoviews \
+	hvplot \
+	panel \
+	statsmodels \
+	sympy \
+	xarray \
+	zarr
 
-RUN rm -rf /wheels
+ARG JOVYAN
 
-COPY --from=jupyterlab /usr/local/share/jupyter/ /usr/local/share/jupyter/
-COPY --from=jupyterlab /usr/local/etc/jupyter/ /usr/local/etc/jupyter/
+ENV USER=${JOVYAN}
+
+RUN useradd -ms /bin/bash ${USER}
+
+USER ${USER}
