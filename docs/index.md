@@ -26,8 +26,8 @@ collaborative workflows across disciplinary boundaries.
 
 ## _Education_
 
-| **Ph. D. in Ecology, Evolution, and Marine Biology** | 2006-09/2012-05 |
-| *University of California at Santa Barbara (UCSB)*   |                 |
+| **Ph. D. in Ecology, Evolution, and Marine Biology** | 2006-09-28/2012-09-15 |
+| *University of California at Santa Barbara (UCSB)*   |                       |
 
 Dissertation developed analytical models of stochasticity's role in
 biodiversity maintenance, advised by Prof. Roger Nisbet. Models coded
@@ -55,9 +55,9 @@ VAN. Reported phone/text canvassing activity metrics, calculated from
 mobile app data hosted on Google BigQuery, to support decision making
 by campaign strategists working to Get Out the Vote.
 
-| **Lead Data Scientist** | 2020-02/2020-05 |
-| **Data Scientist**      | 2019-08/2020-02 |
-| *Kimetrica*             |         $95,000 |
+| **Lead Data Scientist** | 2020-02/2020-05-15 |
+| **Data Scientist**      | 2019-08-05/2020-02 |
+| *Kimetrica*             |            $95,000 |
 
 Participating in the DARPA World Modelers program, lead the design and
 development of data-driven models for environmental and economic
@@ -68,9 +68,9 @@ data visualizations and graphical model-assessments in Jupyter
 Notebooks. Integrated work with colleagues using version control and a
 self-hosted GitLab Server.
 
-| **Senior Data Scientist**                                | 2018-05/2019-08 |
-| **Data Scientist**                                       | 2016-04/2018-05 |
-| *National Socio-Environmental Synthesis Center (SESYNC)* |         $86,000 |
+| **Senior Data Scientist**                                | 2018-05/2019-08-02 |
+| **Data Scientist**                                       | 2016-05-23/2018-05 |
+| *National Socio-Environmental Synthesis Center (SESYNC)* |            $86,000 |
 
 Developed curricula for and lead intensive short courses to train
 researchers on reproducible workflows for data synthesis, analysis,
@@ -84,7 +84,7 @@ resolution time-series observations, experimental results, and
 free-form text/unstructured data. Coding performed primarily in R on
 the Center's self-hosted RStudio Server. Worked with IT to launch a
 parallel Jupyter Hub server to encourage Python based projects. As
-Senior Data Scientist, additionally supervised two data scientists and
+Senior Data Scientist, supervised two data scientists and
 two graduate assistants.
 
 | **Postdoctoral Fellow in Biology** | 2014-05/2016-04 |
@@ -98,8 +98,8 @@ predictive models of cattle trade networks for epidemic inference. Managed
 and taught Python to five undergraduate and masters student research
 assistants.
 
-| **Postdoctoral Scholar in Biology**    | 2012-11/2014-04 |
-| *Woods Hole Oceanographic Institution* |         $57,000 |
+| **Postdoctoral Scholar in Biology**    | 2012-11-05/2014-05-03 |
+| *Woods Hole Oceanographic Institution* |               $57,000 |
 
 Competitive 18-month scholarship awarded for research on phytoplankton
 population dynamics. Used machine learning to classify marine
