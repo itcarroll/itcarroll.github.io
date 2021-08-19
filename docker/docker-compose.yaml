@@ -1,5 +1,4 @@
 version: "3"
-
 x-service: &service
   environment:
     - SHELL=/bin/bash
@@ -7,14 +6,15 @@ x-service: &service
     - ${HOME}:/home/${USER}
     - ${PWD}:/src
   working_dir: /home/${USER}
-  
+volumes:
+  jovyan:
 services:
   gh-pages:
     <<: *service
     image: gh-pages
     build:
       context: ./gh-pages
-    working_dir: /src/docs
+    working_dir: /src/${JEKYLL_DIR:-docs}
     environment:
       - JEKYLL_GITHUB_TOKEN=${JEKYLL_GITHUB_TOKEN}
     ports:
@@ -31,7 +31,7 @@ services:
       args:
         JOVYAN: ${USER}
     ports:
-      - 8889:8888
+      - 8888:8888
     entrypoint:
       - jupyter
       - lab
@@ -41,11 +41,16 @@ services:
       - --NotebookApp.allow_origin=https://colab.research.google.com
   conda:
     <<: *service
+    profiles:
+      - disabled
     image: conda
     build:
       context: ./conda
       args:
-        JOVYAN: ${USER}
+        JOVYAN: jovyan
+    volumes:
+      - jovyan:/home/jovyan
+    working_dir: /home/jovyan
     ports:
       - 8888:8888
     entrypoint:
@@ -63,8 +68,8 @@ services:
         RSTUDIO: ${USER}
     ports:
       - 8787:8787
-    volumes:
-      - ${HOME}:/home/${USER}
+#    volumes:
+#      - ${HOME}:/home/${USER}
     entrypoint:
       - /usr/lib/rstudio-server/bin/rserver
       - --server-daemonize=0

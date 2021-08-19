@@ -1,4 +1,4 @@
-FROM osgeo/gdal:ubuntu-full-3.2.1 AS build_0
+FROM osgeo/gdal:ubuntu-full-3.2.1 AS gdal
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -6,7 +6,10 @@ RUN apt-get update && \
     apt-get install -yq --no-install-recommends \
     	python3-pip
 
-FROM build_0 AS build_1
+RUN python -m pip install -U \
+        setuptools
+
+FROM gdal AS patch
 
 RUN apt-get install -yq --no-install-recommends \
         build-essential \
@@ -20,13 +23,17 @@ RUN python -m pip wheel --wheel-dir=/wheels \
     cartopy \
     psutil
 
-FROM build_0 AS build_2
+FROM gdal AS openrefine
+
+# TODO add openrefine
+
+FROM openrefine AS jupyterlab
 
 RUN python -m pip install \
     jupyterlab==2.* \
     jupyterlab-git
 
-FROM build_2 AS build_3
+FROM jupyterlab AS jupyterlab-build
 
 RUN curl -sL https://deb.nodesource.com/setup_lts.x | bash -
 
@@ -40,17 +47,17 @@ RUN jupyter labextension disable @jupyterlab/extensionmanager-extension && \
     	@jupyterlab/geojson-extension \
     	@pyviz/jupyterlab_pyviz
 
-FROM build_2
+FROM jupyterlab AS jupyter
 
-COPY --from=build_3 /usr/local/share/jupyter/ /usr/local/share/jupyter/
+COPY --from=jupyterlab-build /usr/local/share/jupyter/ /usr/local/share/jupyter/
 
-COPY --from=build_3 /usr/local/etc/jupyter/ /usr/local/etc/jupyter/
+COPY --from=jupyterlab-build /usr/local/etc/jupyter/ /usr/local/etc/jupyter/
 
 RUN apt-get install -yq --no-install-recommends \
         git && \
     rm -rf /var/lib/apt/lists/*
 
-COPY --from=build_1 /wheels /wheels
+COPY --from=patch /wheels /wheels
 
 RUN python -m pip install --no-index --find-links=/wheels \
         cartopy \
@@ -64,11 +71,15 @@ RUN python -m pip install \
 	geopandas \
 	geoviews \
 	hvplot \
+	matplotlib \
+	netcdf4 \
 	panel \
 	statsmodels \
 	sympy \
 	xarray \
 	zarr
+
+FROM jupyter
 
 ARG JOVYAN
 
