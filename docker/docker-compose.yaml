@@ -32,6 +32,7 @@ services:
         JOVYAN: ${USER}
     ports:
       - 8888:8888
+      - 6006:6006
     entrypoint:
       - jupyter
       - lab
@@ -68,8 +69,8 @@ services:
         RSTUDIO: ${USER}
     ports:
       - 8787:8787
-#    volumes:
-#      - ${HOME}:/home/${USER}
     entrypoint:
       - /usr/lib/rstudio-server/bin/rserver
       - --server-daemonize=0
+
+# TODO: OpenRefine
