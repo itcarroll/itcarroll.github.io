@@ -1,13 +1,12 @@
-version: "3"
+version: "3.7"
 x-service: &service
   environment:
     - SHELL=/bin/bash
   volumes:
-    - ${HOME}:/home/${USER}
+    - ${HOME}:/root
     - ${PWD}:/src
-  working_dir: /home/${USER}
-volumes:
-  jovyan:
+    - /glusteruser/icarroll:/gfs
+  working_dir: /root
 services:
   gh-pages:
     <<: *service
@@ -28,35 +27,13 @@ services:
     image: jupyter
     build:
       context: ./jupyter
-      args:
-        JOVYAN: ${USER}
     ports:
       - 8888:8888
       - 6006:6006
     entrypoint:
       - jupyter
       - lab
-      - --LabApp.token=
-      - --ip=0.0.0.0
-      - --no-browser
-      - --NotebookApp.allow_origin=https://colab.research.google.com
-  conda:
-    <<: *service
-    profiles:
-      - disabled
-    image: conda
-    build:
-      context: ./conda
-      args:
-        JOVYAN: jovyan
-    volumes:
-      - jovyan:/home/jovyan
-    working_dir: /home/jovyan
-    ports:
-      - 8888:8888
-    entrypoint:
-      - jupyter
-      - lab
+      - --allow-root
       - --LabApp.token=
       - --ip=0.0.0.0
       - --no-browser
@@ -65,8 +42,6 @@ services:
     image: rstudio
     build:
       context: ./rstudio
-      args:
-        RSTUDIO: ${USER}
     ports:
       - 8787:8787
     entrypoint:
@@ -74,3 +49,4 @@ services:
       - --server-daemonize=0
 
 # TODO: OpenRefine
+# TODO: --no-sandbox for rstudio?

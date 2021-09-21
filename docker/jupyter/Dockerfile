@@ -36,9 +36,15 @@ RUN python -m pip install --no-index --find-links=/wheels \
         psutil && \
     rm -rf /wheels
 
-RUN python -m pip install \
+RUN python -m pip install "poetry==1.1.7"
+
+RUN poetry init --quiet --no-interaction && \
+    poetry config --local virtualenvs.create false
+
+RUN poetry add \
 	bokeh \
 	datashader \
+	dvc \
 	geopandas \
 	geoviews \
 	hvplot \
@@ -47,6 +53,7 @@ RUN python -m pip install \
         jupyterlab-geojson \
         jupyterlab-git \
 	matplotlib \
+	memory_profiler \
 	netcdf4 \
 	panel \
         sidecar \
@@ -59,11 +66,3 @@ RUN python -m pip install \
 RUN jupyter labextension disable @jupyterlab/extensionmanager-extension
 
 FROM jupyter
-
-ARG JOVYAN
-
-ENV USER=${JOVYAN}
-
-RUN useradd -ms /bin/bash ${USER}
-
-USER ${USER}
