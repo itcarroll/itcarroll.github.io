@@ -1,4 +1,4 @@
-FROM osgeo/gdal:ubuntu-full-3.2.1 AS gdal
+FROM osgeo/gdal:ubuntu-full-3.3.2 AS gdal
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -17,7 +17,7 @@ RUN apt-get install -yq --no-install-recommends \
     	python3-dev
 
 # FIXME: why necessary? why doesn't proj installation do this?
-RUN ln -s libproj.so.19 /usr/local/lib/libproj.so
+RUN ln -s libproj.so.22 /usr/local/lib/libproj.so
 
 RUN python -m pip wheel --wheel-dir=/wheels \
     cartopy \
@@ -36,15 +36,13 @@ RUN python -m pip install --no-index --find-links=/wheels \
         psutil && \
     rm -rf /wheels
 
-RUN python -m pip install "poetry==1.1.7"
+RUN python -m pip install "poetry==1.1.10"
 
 RUN poetry init --quiet --no-interaction && \
     poetry config --local virtualenvs.create false
 
 RUN poetry add \
-	bokeh \
 	datashader \
-	dvc \
 	geopandas \
 	geoviews \
 	hvplot \
@@ -55,7 +53,6 @@ RUN poetry add \
 	matplotlib \
 	memory_profiler \
 	netcdf4 \
-	panel \
         sidecar \
 	statsmodels \
 	sympy \
