@@ -17,11 +17,11 @@ collaborative workflows across disciplinary boundaries.
 
 ## _Toolbox_
 
-| Programming                                | Math & Stats                                            |
-|--------------------------------------------+---------------------------------------------------------|
-| Python, R, C, SQL, CUDA, git, Mathematica, | ordinary, partial, and stochastic DEs; hierarchical     |
-| MATLAB, Bash, Jekyll, CSS, LaTeX, Docker,  | Bayes; generalized linear mixed models; random forests; |
-| JavaScript, RegExp, Google Earth Engine    | MCMC; Kalman and particle filtering; time series models |
+| Programming                                | Math & Stats                                                |
+|--------------------------------------------+-------------------------------------------------------------|
+| Python, R, C, SQL, CUDA, git, Mathematica, | ordinary, partial, and stochastic DEs; hierarchical         |
+| MATLAB, Bash, Jekyll, CSS, LaTeX, Docker,  | Bayes; generalized linear mixed models; random forests;     |
+| JavaScript, RegExp, Google Earth Engine    | MCMC; particle filters; time series models; neural networks |
 {:#toolboxes}
 
 ## _Education_
@@ -47,6 +47,13 @@ competition. *Honors*: Caleel Prize for Academic Excellence.
 
 ## _Work Experience_
 
+| **Associate Scientist**                    | *since* 2021-08-16 |
+| **@** *Ocean Ecology Lab (NASA/GSFC/616)*  |                    |
+| *Universities Space Research Association*  |            $85,000 |
+
+Researching machine learning applications to chracterize phytoplankton
+community composition from hyperspectral ocean color.
+
 | **Data Volunteer**      | 2020-09/2020-11 |
 | *Ohio Democratic Party* |              $0 |
 
@@ -57,7 +64,7 @@ by campaign strategists working to Get Out the Vote.
 
 | **Lead Data Scientist** | 2020-02/2020-05-15 |
 | **Data Scientist**      | 2019-08-05/2020-02 |
-| *Kimetrica*             |            $95,000 |
+| *Kimetrica LLC*         |            $95,000 |
 
 Participating in the DARPA World Modelers program, lead the design and
 development of data-driven models for environmental and economic
