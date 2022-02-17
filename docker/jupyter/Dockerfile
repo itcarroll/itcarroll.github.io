@@ -1,30 +1,31 @@
-ARG UBUNTU_VERSION=20.04
+ARG PYTHON_VERSION=3.10
 ARG PROJ_VERSION=8.1.1
-ARG GDAL_VERSION=3.3.2
+ARG GDAL_VERSION=3.4.1
+ARG VENV=/opt/venv
 
-FROM ubuntu:${UBUNTU_VERSION} AS base
+FROM python:${PYTHON_VERSION}-slim AS base
 
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
     apt-get -qq install --no-install-recommends \
         curl \
-	libgeos-3.8.0 \
+	libgeos-3.9.0 \
 	libgeos-c1v5 \
 	libhdf5-103 \
         libhdf5-cpp-103 \  
-	libnetcdf-c++4 \
-	libnetcdf15 \
+	libnetcdf-c++4-1 \
+	libnetcdf18 \
 	libtiff5 \
 	libxml2 \
-        python3 \
-        python3-pip \
-	python3-venv \
 	sqlite3 \
 	udunits-bin && \
     rm -rf /var/lib/apt/lists/*
 
-ARG POETRY_HOME=/usr/local
-RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py | python3
+ARG VENV
+ARG PIPX_BIN_DIR=/usr/local/bin
+RUN python -m venv ${VENV} && \
+    ${VENV}/bin/pip install pipx && \
+    ${VENV}/bin/pipx install poetry
 
 FROM base AS builder
 
@@ -44,8 +45,10 @@ RUN apt-get update && \
 	libtool \
 	libxml2-dev \
 	make \
-	pkg-config \
-	python3-dev
+	pkg-config
+
+ARG VENV
+RUN ${VENV}/bin/pip install numpy wheel
 
 FROM builder AS proj
 
@@ -58,7 +61,7 @@ RUN curl -sL https://github.com/OSGeo/PROJ/archive/refs/tags/${PROJ_VERSION}.tar
     make install
 
 WORKDIR /
-RUN tar -cf proj.tar \
+RUN tar -c -fproj.tar \
     	usr/local/lib/libproj.so* \
 	usr/local/lib/pkgconfig/proj.pc \
 	usr/local/share/proj \
@@ -68,92 +71,88 @@ FROM builder AS gdal
 
 COPY --from=proj /usr/local/include /usr/local/include/
 COPY --from=proj /proj.tar /
-RUN tar --skip-old-files -xf /proj.tar -C / && rm /proj.tar && \
+RUN tar --skip-old-files -x -f/proj.tar -C / && rm /proj.tar && \
     ldconfig
 
+ARG VENV
 ARG GDAL_VERSION
-RUN curl -sL https://github.com/OSGeo/gdal/archive/refs/tags/v${GDAL_VERSION}.tar.gz | \
+RUN curl -sSL https://github.com/OSGeo/gdal/archive/refs/tags/v${GDAL_VERSION}.tar.gz | \
         tar -xz --strip-components=1 && \
     cd gdal && \
-    ./configure && \
+    ./autogen.sh && \
+    ./configure --with-python=${VENV}/bin/python && \
     make && \
-    make install
+    env PREFIX=${VENV} make install
 
 WORKDIR /
-RUN tar -cf gdal.tar \
-    	usr/local/lib/libgdal.so* \
+RUN tar -c -fgdal.tar \
     	usr/local/lib/pkgconfig/gdal.pc \
 	usr/local/lib/gdalplugins \
+    	usr/local/lib/libgdal.so* \
 	usr/local/share/gdal \
-	usr/local/bin
+	usr/local/bin \
+	${VENV}/lib
+# FIXME so ... I don't think GDAL is working in python with all this
+# FIXME and maybe wheels can build the python package anyway, and do without -with-python
 
 FROM builder AS wheels
 
 COPY --from=proj /usr/local/include /usr/local/include/
 COPY --from=proj /proj.tar /
-RUN tar --skip-old-files -xf /proj.tar -C / && rm /proj.tar && \
+RUN tar --skip-old-files -x -f/proj.tar -C / && rm /proj.tar && \
     ldconfig
 
 COPY --from=gdal /usr/local/include /usr/local/include/
 COPY --from=gdal /gdal.tar /
-RUN tar --skip-old-files -xf /gdal.tar -C / && rm /gdal.tar && \
+RUN tar --skip-old-files -x -f/gdal.tar -C / && rm /gdal.tar && \
     ldconfig
 
-RUN poetry init --quiet --no-interaction && \
-    poetry config --local virtualenvs.create false && \
-    poetry add --lock \
-        cartopy \
-	datashader \
-	GDAL \
-	geopandas \
-	geoviews \
-	hvplot \
-	ipywidgets \
-	jupyterlab \
-	jupyterlab-geojson \
-	jupyterlab-git \
-	memory_profiler \
-	netcdf4 \
-	statsmodels \
-	sympy \
-	tensorflow \
-	xarray \
-	zarr && \
+ARG VENV
+COPY pyproject.toml ./
+RUN sed -e "/\.dependencies/a python = \"$(${VENV}/bin/python --version | cut -c8-)\"" -i pyproject.toml
+RUN poetry config virtualenvs.create false && \
+    poetry add --lock $(${VENV}/bin/pip freeze) && \
     poetry export --without-hashes --output=requirements.txt
 
-RUN pip wheel --wheel-dir=wheels -r requirements.txt \
-        --no-binary cartopy \
-	--no-binary GDAL \
-	--no-binary shapely
+ARG VENV
+RUN ${VENV}/bin/pip wheel --wheel-dir=wheels -rrequirements.txt \
+        --no-binary=cartopy \
+        --no-binary=netCDF4 \
+	--no-binary=shapely
 
-RUN tar -cf /wheels.tar wheels requirements.txt
+RUN tar -c -f/wheels.tar wheels requirements.txt
 
 FROM base AS jupyter
 
 COPY --from=proj /proj.tar /
-RUN tar --skip-old-files -xf proj.tar -C / && rm /proj.tar && \
+RUN tar --skip-old-files -x -fproj.tar -C / && rm /proj.tar && \
     ldconfig
 
 COPY --from=gdal /gdal.tar /
-RUN tar --skip-old-files -xf gdal.tar -C / && rm /gdal.tar && \
+RUN tar --skip-old-files -x -fgdal.tar -C / && rm /gdal.tar && \
     ldconfig
-
-COPY --from=wheels /wheels.tar /
-RUN tar --skip-old-files -xf /wheels.tar && rm /wheels.tar && \
-    pip install --no-index --find-links=wheels --no-deps -r requirements.txt && \
-    rm -rf wheels requirements.txt
-
-# FIXME remove next line after nbdime#602 is merged
-RUN pip install --no-deps colorama
 
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
     apt-get -qq install --no-install-recommends \
         git \
-	python-is-python3 && \
+	pandoc \
+	ssh-client && \
     rm -rf /var/lib/apt/lists/*
 
-RUN jupyter labextension disable @jupyterlab/extensionmanager-extension
+COPY --from=wheels /wheels.tar /
+ARG VENV
+RUN tar --skip-old-files -x -f/wheels.tar && rm /wheels.tar && \
+    ${VENV}/bin/pip install --no-index --find-links=wheels --no-deps -rrequirements.txt && \
+    rm -rf wheels requirements.txt
+
+# FIXME remove stage after nbdime#602 is fixed
+ARG VENV
+RUN ${VENV}/bin/pip install --no-deps colorama
+
+ARG VENV
+RUN ${VENV}/bin/jupyter labextension disable @jupyterlab/extensionmanager-extension
 
 # TODO RUN projsync -q --system-directory --all
-# TODO warning in GDAL python bindings build suggested no numpy once, and didn't fix but gone now, maybe gdal-config?
+# FIXME GDAL VENV numpy and python-bindings
+# TODO a tensorflow venv using python 3.9

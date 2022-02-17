@@ -5,7 +5,7 @@ x-service: &service
   volumes:
     - ${HOME}:/root
     - ${PWD}:/src
-    - /glusteruser/icarroll:/gfs
+    - /glusteruser:/glusteruser
   working_dir: /root
 services:
   gh-pages:
@@ -27,9 +27,11 @@ services:
     image: jupyter
     build:
       context: ./jupyter
+      # target: wheels
     ports:
       - 8888:8888
-      - 6006:6006
+      - 6006:6006  # TensorBoard
+      - 40000:40000  # dtale
     entrypoint:
       - jupyter
       - lab
@@ -50,3 +52,6 @@ services:
 
 # TODO: OpenRefine
 # TODO: --no-sandbox for rstudio?
+# TODO: SSH_AUTH_SOCK volume appears to kill the local forard for jupyter lab?
+# TODO: dtale
+# TODO: TensorBoard
