@@ -27,12 +27,11 @@ services:
     image: jupyter
     build:
       context: ./jupyter
-      # target: wheels
     ports:
       - 8888:8888
       - 6006:6006  # TensorBoard
       - 40000:40000  # dtale
-    entrypoint:
+    command:
       - jupyter
       - lab
       - --allow-root

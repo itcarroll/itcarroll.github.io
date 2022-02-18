@@ -48,7 +48,8 @@ RUN apt-get update && \
 	pkg-config
 
 ARG VENV
-RUN ${VENV}/bin/pip install numpy wheel
+# FIXME numpy constraint due to numba, what's up with that?
+RUN ${VENV}/bin/pip install "numpy<1.22" wheel
 
 FROM builder AS proj
 
@@ -74,15 +75,14 @@ COPY --from=proj /proj.tar /
 RUN tar --skip-old-files -x -f/proj.tar -C / && rm /proj.tar && \
     ldconfig
 
-ARG VENV
 ARG GDAL_VERSION
 RUN curl -sSL https://github.com/OSGeo/gdal/archive/refs/tags/v${GDAL_VERSION}.tar.gz | \
         tar -xz --strip-components=1 && \
     cd gdal && \
     ./autogen.sh && \
-    ./configure --with-python=${VENV}/bin/python && \
+    ./configure && \
     make && \
-    env PREFIX=${VENV} make install
+    make install
 
 WORKDIR /
 RUN tar -c -fgdal.tar \
@@ -90,10 +90,7 @@ RUN tar -c -fgdal.tar \
 	usr/local/lib/gdalplugins \
     	usr/local/lib/libgdal.so* \
 	usr/local/share/gdal \
-	usr/local/bin \
-	${VENV}/lib
-# FIXME so ... I don't think GDAL is working in python with all this
-# FIXME and maybe wheels can build the python package anyway, and do without -with-python
+	usr/local/bin
 
 FROM builder AS wheels
 
@@ -112,11 +109,13 @@ COPY pyproject.toml ./
 RUN sed -e "/\.dependencies/a python = \"$(${VENV}/bin/python --version | cut -c8-)\"" -i pyproject.toml
 RUN poetry config virtualenvs.create false && \
     poetry add --lock $(${VENV}/bin/pip freeze) && \
+    poetry add --lock gdal==$(gdal-config --version) && \
     poetry export --without-hashes --output=requirements.txt
 
 ARG VENV
 RUN ${VENV}/bin/pip wheel --wheel-dir=wheels -rrequirements.txt \
         --no-binary=cartopy \
+	--no-binary=gdal \
         --no-binary=netCDF4 \
 	--no-binary=shapely
 
@@ -152,6 +151,9 @@ RUN ${VENV}/bin/pip install --no-deps colorama
 
 ARG VENV
 RUN ${VENV}/bin/jupyter labextension disable @jupyterlab/extensionmanager-extension
+
+#ARG VENV
+#ENTRYPOINT ["source", "${VENV}/bin/activate", "&&"]
 
 # TODO RUN projsync -q --system-directory --all
 # FIXME GDAL VENV numpy and python-bindings
