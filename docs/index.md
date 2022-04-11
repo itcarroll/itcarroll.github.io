@@ -47,8 +47,9 @@ competition. *Honors*: Caleel Prize for Academic Excellence.
 
 ## _Work Experience_
 
-| **Associate Scientist** at USRA          | *since* 2021-08-16 |
-| *Ocean Ecology Lab #616 (NASA/GSFC/SED)* |            $85,000 |
+| **Associate Research Scientist** at UMBC |    *since* 2021-12-01 |
+| **Associate Scientist** at USRA          | 2021-08-16/2021-11-30 |
+| *Ocean Ecology Lab #616 (NASA/GSFC/SED)* |               $87,600 |
 
 Researching machine learning applications to chracterize phytoplankton
 community composition from hyperspectral ocean color.
