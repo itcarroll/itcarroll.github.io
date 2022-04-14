@@ -23,14 +23,19 @@ services:
       - serve
       - --host=0.0.0.0
   jupyter:
-    <<: *service
     image: jupyter
     build:
       context: ./jupyter
+      args:
+        JOVYAN: ${USER}
+    environment:
+      - SHELL=/bin/bash
     ports:
       - 8888:8888
       - 6006:6006  # TensorBoard
-      - 40000:40000  # dtale
+    volumes:
+      - ${HOME}:/home/${USER}
+      - /glusteruser:/glusteruser
     command:
       - jupyter
       - lab
@@ -52,5 +57,4 @@ services:
 # TODO: OpenRefine
 # TODO: --no-sandbox for rstudio?
 # TODO: SSH_AUTH_SOCK volume appears to kill the local forard for jupyter lab?
-# TODO: dtale
 # TODO: TensorBoard
