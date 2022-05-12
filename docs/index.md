@@ -49,7 +49,7 @@ competition. *Honors*: Caleel Prize for Academic Excellence.
 
 | **Associate Research Scientist** at UMBC |    *since* 2021-12-01 |
 | **Associate Scientist** at USRA          | 2021-08-16/2021-11-30 |
-| *Ocean Ecology Lab #616 (NASA/GSFC/SED)* |               $87,600 |
+| *Ocean Ecology Lab (NASA/GSFC#616)*      |               $87,600 |
 
 Researching machine learning applications to chracterize phytoplankton
 community composition from hyperspectral ocean color.
@@ -73,7 +73,7 @@ and other large-scale geospatial datasets for the region using both
 Amazon S3 and an in-house CKAN data portal. Distributed results with
 data visualizations and graphical model-assessments in Jupyter
 Notebooks. Integrated work with colleagues using version control and a
-self-hosted GitLab Server.
+self-hosted GitLab server.
 
 | **Senior Data Scientist**                                | 2018-05/2019-08-02 |
 | **Data Scientist**                                       | 2016-05-23/2018-05 |
