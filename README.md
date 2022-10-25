@@ -29,7 +29,7 @@ containing data you want accessible in `/src`.
 ## GitHub Page
 
 The `docs` sub-directory contains the files for the static website
-published at PAGES/, my online CV/resume.
+published at https://itcarroll.github.io, my online CV/resume.
 
 ## Jupyter Notebooks
 
