@@ -135,9 +135,14 @@ feet over 25 miles from nearest road access.
 
 ## _Peer Reviewed Publications_
 
-- Cetinić, I., Rousseaux, C. S., **Carroll, I. T.**, Chase, A. P., Kramer,
-  S. J., Werdell, P. J., … & Sayers, M. (2023). Phytoplankton composition
-  from space: requirements, opportunities, and challenges. ESS Open Archive.
+- Cetinić, I., C. S. Rousseaux, **I. T. Carroll**, A. P. Chase, S. J. Kramer,
+  P. J. Werdell, D. A. Siegel, H. M. Dierssen, D. Catlett, A. Neeley,
+  I. M. Soto Ramos, J. L. Wolny, N. Sadoff, E. Urquhart, T. K. Westberry,
+  D. Stramski, N. Pahlevan, B. N. Seegers, E. Sirk, P. Kienteca Lange, R. A. Vandermeulen,
+  J. R. Graff, J. G. Allen, P. Gaube, L. I. W. McKinna, S. M. McKibben, C. E.
+  Binding, V. Sanjuan Calzado, and M. Sayers. 2024. Phytoplankton composition from
+  sPACE: requirements, opportunities, and challenges. Remote Sensing
+  of Environment 302(113964).
 
 - Avolio, M. L., **I. T. Carroll**, S. Collins, G. Houseman,
   F. Isbell, S. Koerner, K. La Pierre, M. Smith, K. Wilcox, and
