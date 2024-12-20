@@ -3,6 +3,8 @@ markdown: kramdown
 theme: minima
 plugins:
   - jemoji
+include:
+  - .well-known
 exclude:
   # Emacs
   - ".#*"
